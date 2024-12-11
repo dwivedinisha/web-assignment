@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Homepage</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        #topFrame {
+            background-color: #103f6d;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+        }
+        #leftFrame, #rightFrame {
+            flex: 1;
+            display: flex;
+        }
+        #leftFrame {
+            background-color: #c6d8d8;
+            width: 20%;
+            border-right: 2px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #leftFrame ul {
+            list-style: none;
+            padding: 0;
+        }
+        #leftFrame li {
+            margin: 10px 0;
+        }
+        #rightFrame {
+            background-color: white;
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        table, td {
+  border: 1px solid black;
+}
+    </style>
+    <script>
+        function loadPage(page) {
+            document.getElementById('rightFrame').innerHTML = document.getElementById(page).innerHTML;
+        }
+    </script>
+</head>
+<body>
+    <div id="topFrame">
+        <h1>Pushtakalay Book Store</h1>
+        <img height="70px" width="70px" src="data:image/png;base64,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" alt="College Logo" height="50">
+        <nav>
+            <a href="#" onclick="loadPage('homepage')">Homepage</a> |
+            <a href="#" onclick="loadPage('login')">Login</a> |
+            <a href="#" onclick="loadPage('registration')">Registration</a> |
+            <a href="#" onclick="loadPage('catalogue')">Catalogue</a> |
+            <a href="#" onclick="loadPage('cart')">Cart</a>
+        </nav>
+    </div>
+
+    <div style="width: 100%; overflow: hidden;">
+        <div id="leftFrame" style="width: 600px; float: left;">
+            <ul>
+                <li><a href="#" onclick="loadPage('cseCatalogue')">CSE</a></li>
+                <li><a href="#" onclick="loadPage('eceCatalogue')">ECE</a></li>
+                <li><a href="#" onclick="loadPage('eeeCatalogue')">EEE</a></li>
+                <li><a href="#" onclick="loadPage('civilCatalogue')">CIVIL</a></li>
+            </ul>
+        </div>
+    
+        <div id="rightFrame"   style="margin-left: 620px; ">
+            <div  id="wrapper" >
+                <h2 style="float:left;">Welcome to Our book store Website</h2>
+                <p style="float: left; clear: left;"> Description of the website.</p>
+            </div>
+
+            </div>
+
+
+
+            <div id="homepage" style="display:none;">
+
+                <div  id="wrapper" >
+                    <h2 style="float:left;">Welcome to homepage of our book store Website</h2>
+                    <p style="float: left; clear: left;">This is the initial description of the website.</p>
+                </div>
+
+            </div>
+
+            <div id="login" style="display:none;">
+                
+                    <div id="wrapper">
+                        <div style="float:left;"><h2>Login Page</h2></div>
+                        <div style="float: left; clear: left;"><label for="username">User Name</label>
+                            <input type="text" id="username" name="username" placeholder="Enter username.">
+                        </div>
+                        <div style="float: left; clear: left;"><label for="psw">Password</label>
+                            <input type="text" id="psw" name="psw" placeholder="Enter password">
+                        </div>
+                        <div style="float: left; clear: left;"><input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </div>
+                    </div>                  
+            </div>
+               
+                               
+            
+                  
+            <div id="registration"  style="display:none;">
+                <div id="wrapper" >
+                    <div style="float:left;"><h2>Registration Page</h2></div>
+                    <div style="float: left; clear: left;"><p>Registration form will be here.</p></div>
+                </div>
+            </div>
+
+            <div id="catalogue" style="display:none;">
+                <table class="book-table"  >
+                    <thead> 
+                        <tr> 
+                            <th>Cover</th> 
+                            <th>Author</th> 
+                            <th>Publisher</th> 
+                            <th>Price</th> 
+                            <th>Add to Cart</th> 
+                        </tr> 
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <td><img height="50px" width="50px" src="https://marketplace.canva.com/EAFrPFQJSfE/1/0/1003w/canva-beige-and-blue-collage-travel-journal-book-cover-jk4FXGHXYrg.jpg" alt="Book 1 Cover" class="book-cover"></td> 
+                            <td>Reese Willer</td> 
+                            <td>Publisher 1</td> 
+                            <td>$10.00</td> 
+                            <td><button class="cart-btn">Add to Cart</button></td> 
+                        </tr> 
+                        <tr> 
+                            <td><img height="50px" width="50px" src="https://d1csarkz8obe9u.cloudfront.net/themedlandingpages/tlp_hero_book-cover-adb8a02f82394b605711f8632a44488b.jpg?ts%20=%201698323696" alt="Book 2 Cover" class="book-cover"></td> 
+                            <td>Samantha Donald</td> 
+                            <td>Publisher 2</td> 
+                            <td>$15.00</td> 
+                            <td><button class="cart-btn">Add to Cart</button></td> 
+                        </tr> 
+                        <tr> 
+                            <td><img height="50px" width="50px" src="https://marketplace.canva.com/EAFZfrpK8D4/1/0/1003w/canva-dark-minimalist-vintage-portrait-photo-ripped-paper-book-cover-TDLQ377Qb9o.jpg" alt="Book 3 Cover" class="book-cover"></td> 
+                            <td>Bailey Dupint</td> 
+                            <td>Publisher 3</td> 
+                            <td>$12.00</td> 
+                            <td><button class="cart-btn">Add to Cart</button></td> 
+                        </tr> <!-- Add more rows as needed --> 
+                    </tbody> 
+                </table>
+            </div>
+            <div id="cart" style="display:none;">
+                <div id="wrapper">
+                    <h2 style="float:left;">Cart Page</h2>
+                    <p  style="float: left; clear: left;">Your shopping cart will be here.</p>
+                </div>
+            </div>
+            <div id="cseCatalogue" style="display:none;">
+                <div id="wrapper">
+                    <h2 style="float:left;">CSE Catalogue</h2>
+                    <p  style="float: left; clear: left;">List of CSE books will be here.</p>
+                </div>
+            </div>
+            <div id="eceCatalogue" style="display:none;">
+                <div id="wrapper">
+                    <h2 style="float:left;">ECE Catalogue</h2>
+                    <p  style="float: left; clear: left;">List of ECE books will be here.</p>
+                </div>
+            </div>
+            <div id="eeeCatalogue" style="display:none;">
+                <div id="wrapper">
+                    <h2 style="float:left;">EEE Catalogue</h2>
+                    <p  style="float: left; clear: left;">List of EEE books will be here.</p>
+                </div>
+            </div>
+            <div id="civilCatalogue" style="display:none;">
+                <div id="wrapper">
+                    <h2 style="float:left;">CIVIL Catalogue</h2>
+                    <p  style="float: left; clear: left;">List of CIVIL books will be here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

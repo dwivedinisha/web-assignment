@@ -1,0 +1,347 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>College Homepage</title> 
+    <style> 
+         /* Enhanced CSS */ 
+body { 
+    font-family: 'Arial', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    color: #333; 
+    background-color: #f7f7f7; 
+} 
+ 
+/* Top Frame */ 
+#topFrame { 
+    background-color: #103f6d; 
+    color: #fff; 
+    padding: 20px 10px; 
+    text-align: center; 
+    border-bottom: 4px solid #007bff; 
+} 
+ 
+#topFrame h1 { 
+    margin: 0; 
+    font-size: 2rem; 
+} 
+ 
+#topFrame nav a { 
+    color: #fff; 
+    font-weight: bold; 
+    margin: 0 10px; 
+    transition: color 0.3s ease; 
+} 
+ 
+#topFrame nav a:hover { 
+    color: #f7c948; 
+} 
+ 
+/* Left Navigation */ 
+#leftFrame { 
+    background-color: #e6f2f2; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    border-right: 2px solid #ccc; 
+} 
+ 
+#leftFrame ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+} 
+ 
+#leftFrame li { 
+    margin-bottom: 15px; 
+} 
+ 
+#leftFrame a { 
+    text-decoration: none; 
+    color: #103f6d; 
+    font-weight: bold; 
+    font-size: 1rem; 
+    display: block; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+} 
+ 
+#leftFrame a:hover { 
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 5px; 
+    border-radius: 5px; 
+} 
+ 
+/* Right Frame */ 
+#rightFrame { 
+    background-color: #fff; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    overflow-y: auto; 
+    border-left: 2px solid #ccc; 
+    margin: 0 auto; 
+} 
+ 
+/* Buttons */ 
+button.cart-btn { 
+    background-color: #103f6d; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1rem; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+} 
+ 
+button.cart-btn:hover { 
+    background-color: #007bff; 
+} 
+ 
+/* Table */ 
+table.book-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+    font-size: 1rem; 
+} 
+ 
+.book-table th, .book-table td { 
+    padding: 10px; 
+    text-align: left; 
+} 
+ 
+.book-table th { 
+    background-color: #103f6d; 
+    color: #fff; 
+} 
+ 
+.book-table td { 
+    background-color: #f7f7f7; 
+} 
+ 
+.book-table img { 
+    border-radius: 5px; 
+} 
+    </style> 
+    <script> 
+        function loadPage(page) { 
+            document.getElementById('rightFrame').innerHTML = 
+document.getElementById(page).innerHTML; 
+        } 
+    </script> 
+</head> 
+<body> 
+    <div id="topFrame"> 
+        <h1>Book Haven</h1> 
+        <img height="70px" width="70px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMxkVKc_74LMT6XRKJJ1
+        QKTKxa846Mw0StsDoqtwUaC5UY9-A4N_fBJHOfWsrG38SuF3o&usqp=CAU" 
+alt="College Logo" height="50"> 
+        <nav> 
+            <a href="#" onclick="loadPage('homepage')">Homepage</a> | 
+            <a href="#" onclick="loadPage('login')">Login</a> | 
+            <a href="#" onclick="loadPage('registration')">Registration</a> | 
+            <a href="#" onclick="loadPage('catalogue')">Catalogue</a> | 
+            <a href="#" onclick="loadPage('cart')">Cart</a> 
+        </nav> 
+    </div> 
+ 
+    <div style="width: 100%; overflow: hidden;"> 
+        <div id="leftFrame" style="width: 600px; float: left;"> 
+            <ul> 
+                <li><a href="#" 
+onclick="loadPage('cseCatalogue')">CSE</a></li> 
+                <li><a href="#" 
+onclick="loadPage('eceCatalogue')">ECE</a></li> 
+                <li><a href="#" 
+onclick="loadPage('eeeCatalogue')">EEE</a></li> 
+                <li><a href="#" 
+onclick="loadPage('civilCatalogue')">CIVIL</a></li> 
+            </ul> 
+        </div> 
+     
+        <div id="rightFrame"   style="margin-left: 620px; "> 
+            <div  id="wrapper" > 
+                <h2 style="float:left;">Welcome to Our book store Website</h2> 
+                <p style="float: left; clear: left;"> Description of the 
+website.</p> 
+            </div> 
+            </div> 
+            <div id="homepage" style="display:none;"> 
+ 
+                <div  id="wrapper" > 
+                    <h2 style="float:left;">Welcome to homepage of our book 
+store Website</h2> 
+                    <p style="float: left; clear: left;">This is the initial 
+description of the website.</p> 
+                </div> 
+ 
+            </div> 
+ 
+            <div id="login" style="display:none;"> 
+                 
+                    <div id="wrapper"> 
+                        <div style="float:left;"><h2>Login Page</h2></div> 
+                        <div style="float: left; clear: left;"><label 
+for="username">User Name</label> 
+                            <input type="text" id="username" name="username" 
+placeholder="Enter username."> 
+                        </div> 
+                        <div style="float: left; clear: left;"><label 
+for="psw">Password</label> 
+                            <input type="text" id="psw" name="psw" 
+placeholder="Enter password"> 
+                        </div> 
+                        <div style="float: left; clear: left;"><input 
+type="submit" value="Submit"> 
+                            <input type="reset" value="Reset"> 
+                        </div> 
+                    </div>                   
+            </div> 
+                
+                                
+             
+                   
+            <div id="registration"  style="display:none;"> 
+                <div id="wrapper" > 
+                    <div style="float:left;"><h2>Registration Page</h2></div> 
+                    <div style="float: left; clear: left;"><p>Registration 
+form will be here.</p></div> 
+                </div> 
+            </div> 
+ 
+            <div id="catalogue" style="display:none;"> 
+                <table class="book-table" > 
+                    <thead>  
+                        <tr>  
+                            <th>Cover</th>  
+                            <th>Author</th>  
+                            <th>Publisher</th>  
+                            <th>Price</th>  
+                            <th>Add to Cart</th>  
+                        </tr>  
+                    </thead>  
+                    <tbody>  
+                        <tr>  
+                            <td><img height="50px" width="50px" 
+src="https://marketplace.canva.com/EAFrPFQJSfE/1/0/1003w/canva-beige-and-blue
+collage-travel-journal-book-cover-jk4FXGHXYrg.jpg" alt="Book 1 Cover" 
+class="book-cover"></td>  
+                            <td>Reese Willer</td>  
+                            <td>Publisher 1</td>  
+                            <td>$10.00</td>  
+                            <td><button class="cart-btn">Add to 
+Cart</button></td>  
+                        </tr>  
+                        <tr>  
+                            <td><img height="50px" width="50px" 
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
+T3Xeao_PjF8Fleh6YVlgk9qZiQqfpiKI5HuA&s" alt="Book 2 
+Cover" class="book-cover"></td>  
+                            <td>Samantha Donald</td>  
+                            <td>Publisher 2</td>  
+                            <td>$15.00</td>  
+                            <td><button class="cart-btn">Add to 
+Cart</button></td>  
+                        </tr>  
+                        <tr>  
+                            <td><img height="50px" width="50px" 
+src="https://marketplace.canva.com/EAFZfrpK8D4/1/0/1003w/canva-dark
+minimalist-vintage-portrait-photo-ripped-paper-book-cover-TDLQ377Qb9o.jpg" 
+alt="Book 3 Cover" class="book-cover"></td>  
+                            <td>Bailey Dupint</td>  
+                            <td>Publisher 3</td>  
+                            <td>$12.00</td>  
+                            <td><button class="cart-btn">Add to 
+Cart</button></td>  
+                        </tr> <!-- Add more rows as needed -->  
+                    </tbody>  
+                </table> 
+            </div> 
+            <div id="cart" style="display:none;"> 
+                <div id="wrapper"> 
+                    <table class="book-table" > 
+                        <thead>  
+                            <tr>  
+                                <th>Cover</th>  
+                                <th>Author</th>  
+                                <th>Publisher</th> 
+                                <th>Quantity</th> 
+                                <th>Price</th> 
+                                <th>Amount</th> 
+                                 
+                            </tr>  
+                        </thead>  
+                        <tbody>  
+                            <tr>  
+                                <td><img height="50px" width="50px" 
+    src="https://marketplace.canva.com/EAFrPFQJSfE/1/0/1003w/canva-beige-and-blue
+    collage-travel-journal-book-cover-jk4FXGHXYrg.jpg" alt="Book 1 Cover" 
+    class="book-cover"></td>  
+                                <td>Reese Willer</td>  
+                                <td>Publisher 1</td> 
+                                <td>2</td> 
+                                <td>$10.00</td> 
+                                <td>$20.00</td> 
+                                
+                            </tr>  
+                            <tr>  
+                                <td><img height="50px" width="50px" 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
+    T3Xeao_PjF8Fleh6YVlgk9qZiQqfpiKI5HuA&s" alt="Book 2 
+    Cover" class="book-cover"></td>  
+                                <td>Samantha Donald</td>  
+                                <td>Publisher 2</td>  
+                                <td>1</td>
+                                <td>$15.00</td>
+                                <td>$15.00</td>  
+                                
+                            </tr>  
+                            
+                            <tr>
+                                <td colspan="5" style="text-align: center;">
+                                    Total Price :
+                                </td>
+                                <td >
+                                    $35.0
+                                </td>
+
+                            </tr> <!-- Add more rows as needed -->  
+                        </tbody>  
+                    </table> 
+                </div> 
+            </div> 
+            <div id="cseCatalogue" style="display:none;"> 
+                <div id="wrapper"> 
+                    <h2 style="float:left;">CSE Catalogue</h2> 
+                    <p  style="float: left; clear: left;">List of CSE books 
+will be here.</p> 
+                </div> 
+            </div> 
+            <div id="eceCatalogue" style="display:none;"> 
+                <div id="wrapper"> 
+                    <h2 style="float:left;">ECE Catalogue</h2> 
+                    <p  style="float: left; clear: left;">List of ECE books 
+will be here.</p> 
+                </div> 
+            </div> 
+            <div id="eeeCatalogue" style="display:none;"> 
+                <div id="wrapper"> 
+                    <h2 style="float:left;">EEE Catalogue</h2> 
+                    <p  style="float: left; clear: left;">List of EEE books 
+will be here.</p> 
+                </div> 
+            </div> 
+            <div id="civilCatalogue" style="display:none;"> 
+                <div id="wrapper"> 
+                    <h2 style="float:left;">CIVIL Catalogue</h2> 
+                    <p  style="float: left; clear: left;">List of CIVIL books 
+will be here.</p> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+     
+</body> 
+</html>

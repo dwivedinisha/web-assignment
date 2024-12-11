@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d5d7d0;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: inline;
+    margin: 1rem 0 0.5rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+   }
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form action="#" method="post">
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Email ID -->
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Sex -->
+            <label>Sex:</label>
+            <input type="radio" id="male" name="sex" value="male" required><label for="male">Male</label>
+            <input type="radio" id="female" name="sex" value="female" required><label for="female">Female</label><br><br>
+            
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth:</label>
+            <select name="dob_day" id="dob_day" required>
+                <option value="" disabled selected>Day</option>
+                <!-- Options for days (1-31) -->
+                <!-- Add options dynamically -->
+                <script>
+                    for (let i = 1; i <= 31; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+            <select name="dob_month" id="dob_month" required>
+                <option value="" disabled selected>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="February">March</option>
+                <option value="February">April</option>
+                <option value="February">May</option>
+                <option value="February">June</option>
+                <option value="February">July</option>
+                <option value="February">August</option>
+                <option value="February">September</option>
+                <option value="February">October</option>
+                <option value="February">November</option>
+                <option value="February">December</option>
+                <!-- Add other months -->
+            </select>
+            <select name="dob_year" id="dob_year" required>
+                <option value="" disabled selected>Year</option>
+                <!-- Options for years (1900-2024) -->
+                <!-- Add options dynamically -->
+                <script>
+                    for (let i = 1900; i <= 2024; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+
+            <!-- Languages Known -->
+            <label>Language Known:</label>
+            <input type="checkbox" id="english" name="language" value="english">
+            <label for="english">English</label>
+            <input type="checkbox" id="telugu" name="language" value="telugu">
+            <label for="telugu">Telugu</label>
+            <input type="checkbox" id="hindi" name="language" value="hindi">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="tamil" name="language" value="tamil">
+            <label for="tamil">Tamil</label>
+            
+            <!-- Address -->
+             <br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

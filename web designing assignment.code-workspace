@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Helping Hand"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web designing assignment"
+	}
+}
